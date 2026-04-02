@@ -14,6 +14,7 @@
 - 🏗️ **Modular & Scalable Architecture**
 - 🔒 **Environment Variable Configuration**
 - 🛡️ **Production-Ready Error Handling**
+- 🐳 **Fully Dockerized** — one-command deployment with Docker Compose
 
 ---
 
@@ -86,7 +87,10 @@ research-agent/
 │   └── state.py                # LangGraph state schema
 │
 ├── requirements.txt
-├── .env
+├── .env                        # API keys (never committed)
+├── Dockerfile                  # Multi-stage Docker image
+├── docker-compose.yml          # One-command deployment
+├── .dockerignore               # Files excluded from the image
 └── README.md
 ```
 
@@ -102,6 +106,7 @@ research-agent/
 | **Groq / OpenAI** | LLM inference |
 | **Tavily Search API** | Internet search |
 | **Python** | Core language |
+| **Docker** | Containerization & deployment |
 
 ---
 
@@ -140,6 +145,47 @@ The server will be available at:
 ```
 http://localhost:8000
 ```
+
+---
+
+## 🐳 Docker Deployment (Recommended)
+
+**Prerequisites:** Docker & Docker Compose installed.
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/hasnainyaqub/research-agent.git
+cd research-agent
+```
+
+**2. Configure environment variables**
+
+```env
+# .env
+GROQ_API_KEY=your_groq_api_key
+TAVILY_API_KEY=your_tavily_api_key
+```
+
+**3. Build & start**
+
+```bash
+docker compose up --build
+```
+
+Run in the background:
+
+```bash
+docker compose up -d --build
+```
+
+**4. Stop the container**
+
+```bash
+docker compose down
+```
+
+> **Security note:** The `.env` file is listed in `.dockerignore` and is never baked into the image. Keys are injected at runtime via Docker Compose's `env_file` directive.
 
 ---
 
@@ -216,6 +262,7 @@ AI in Education
 
 ## 🔮 Future Improvements
 
+- [x] Docker deployment
 - [ ] Vector Database integration
 - [ ] RAG-based memory
 - [ ] Streaming responses

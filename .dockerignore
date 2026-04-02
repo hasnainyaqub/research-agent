@@ -1,0 +1,42 @@
+# Python cache & compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment secrets — injected at runtime via --env-file
+.env
+
+# Git & IDE
+.git/
+.gitignore
+.github/
+.vscode/
+.idea/
+
+# Docker itself
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# OS artefacts
+.DS_Store
+Thumbs.db
+
+# Test artefacts
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# Build / dist artefacts
+dist/
+build/
+*.egg-info/
