@@ -1,0 +1,222 @@
+.wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-lg) 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.pipeline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  padding: var(--space-md) 0;
+}
+
+/* Connector line between steps */
+.connector {
+  display: flex;
+  align-items: center;
+  padding-top: 22px;
+  flex: 0 0 48px;
+}
+
+.connectorLine {
+  width: 100%;
+  height: 2px;
+  background: var(--border-default);
+  border-radius: 1px;
+  transition: background var(--transition-slow);
+}
+
+.connectorActive .connectorLine {
+  background: var(--gradient-primary);
+}
+
+/* Step node */
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  min-width: 80px;
+  transition: all var(--transition-base);
+}
+
+.stepCircle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border: 2px solid var(--border-default);
+  background: var(--bg-secondary);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+/* Pending state */
+.pending .stepCircle {
+  opacity: 0.4;
+}
+
+.pending .stepLabel {
+  color: var(--text-muted);
+}
+
+/* Active state */
+.active .stepCircle {
+  border-color: var(--accent-primary);
+  background: rgba(124, 58, 237, 0.1);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.active .stepLabel {
+  color: var(--accent-primary-light);
+}
+
+/* Done state */
+.done .stepCircle {
+  border-color: var(--accent-success);
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent-success);
+}
+
+.done .stepLabel {
+  color: var(--accent-success);
+}
+
+/* Step info */
+.stepInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.stepLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: color var(--transition-base);
+}
+
+.stepDesc {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 100px;
+}
+
+.stepDone {
+  font-size: 11px;
+  color: var(--accent-success);
+  font-weight: 500;
+}
+
+.stepIcon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Spinner */
+.spinner {
+  width: 22px;
+  height: 22px;
+  border: 2.5px solid rgba(124, 58, 237, 0.2);
+  border-top-color: var(--accent-primary-light);
+  border-radius: 50%;
+  animation: spin-slow 0.8s linear infinite;
+}
+
+/* Typing dots */
+.dots {
+  display: inline-flex;
+  gap: 1px;
+  margin-left: 2px;
+}
+
+.dots span {
+  animation: typing-dot 1.4s ease-in-out infinite;
+  font-weight: 700;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Error banner */
+.errorBanner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--radius-md);
+  color: #f87171;
+  font-size: 14px;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Complete banner */
+.completeBanner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-md);
+  color: var(--accent-success);
+  font-size: 14px;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .pipeline {
+    gap: 0;
+  }
+
+  .connector {
+    flex: 0 0 20px;
+  }
+
+  .stepCircle {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .spinner {
+    width: 18px;
+    height: 18px;
+  }
+
+  .stepLabel {
+    font-size: 11px;
+  }
+
+  .stepDesc {
+    display: none;
+  }
+
+  .step {
+    min-width: 60px;
+  }
+}

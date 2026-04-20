@@ -2,7 +2,8 @@ from langchain_groq import ChatGroq
 
 llm = ChatGroq(
     model="openai/gpt-oss-20b",
-    temperature=0.2
+    temperature=0.2, 
+    max_tokens=5000
 )
 
 def reviewer_agent(state):
