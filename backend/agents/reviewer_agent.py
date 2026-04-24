@@ -1,7 +1,7 @@
 from langchain_groq import ChatGroq
 
 llm = ChatGroq(
-    model="openai/gpt-oss-20b",
+    model="openai/gpt-oss-120b",
     temperature=0.2, 
     max_tokens=5000
 )

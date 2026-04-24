@@ -1,8 +1,9 @@
 from langchain_groq import ChatGroq
 
 llm = ChatGroq(
-    model="openai/gpt-oss-20b",
-    temperature=0.5
+    model="llama-3.3-70b-versatile",
+    temperature=0.5,
+    max_tokens=5000
 )
 
 def writer_agent(state):

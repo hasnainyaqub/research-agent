@@ -2,8 +2,9 @@ from langchain_groq import ChatGroq
 from tools.search_tool import search_internet
 
 llm = ChatGroq(
-    model="openai/gpt-oss-20b",
-    temperature=0.3
+    model="llama-3.3-70b-versatile",
+    temperature=0.3,
+    max_tokens=5000
 )
 
 def research_agent(state):

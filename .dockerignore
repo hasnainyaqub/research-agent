@@ -1,4 +1,4 @@
-# Python cache & compiled files
+<![CDATA[# Python cache & compiled files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -11,6 +11,9 @@ venv/
 env/
 ENV/
 
+# Node modules (handled per-service)
+**/node_modules/
+
 # Environment secrets — injected at runtime via --env-file
 .env
 
@@ -22,7 +25,6 @@ ENV/
 .idea/
 
 # Docker itself
-Dockerfile
 docker-compose.yml
 .dockerignore
 
@@ -40,3 +42,8 @@ coverage.xml
 dist/
 build/
 *.egg-info/
+
+# Next.js build cache
+**/.next/
+**/out/
+]]>
