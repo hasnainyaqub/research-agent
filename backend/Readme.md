@@ -1,4 +1,4 @@
-<![CDATA[<div align="center">
+<div align="center">
 
 # 🔬 Research Agent — Backend
 
@@ -180,4 +180,3 @@ class ResearchState(TypedDict):
 ## 👨‍💻 Author
 
 **Hasnain Yaqoob** — [hasnainyaqoob.site](https://hasnainyaqoob.site) · [GitHub](https://github.com/hasnainyaqub)
-]]>

@@ -1,4 +1,4 @@
-<![CDATA[<div align="center">
+<div align="center">
 
 # 🎨 Research Agent — Frontend
 
@@ -151,4 +151,4 @@ The `useResearch` hook manages the full lifecycle:
 ## 👨‍💻 Author
 
 **Hasnain Yaqoob** — [hasnainyaqoob.site](https://hasnainyaqoob.site) · [GitHub](https://github.com/hasnainyaqub)
-]]>
+

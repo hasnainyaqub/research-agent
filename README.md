@@ -1,4 +1,4 @@
-<![CDATA[<div align="center">
+<div align="center">
 
 # 🔬 Autonomous Research Agent
 
@@ -410,4 +410,4 @@ This project is licensed under the **MIT License** — see the [LICENSE](./backe
 ⭐ **Star this repository if you find it useful!** ⭐
 
 </div>
-]]>
+
